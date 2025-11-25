@@ -25,7 +25,7 @@ The primary visual modality is a high-resolution, 360° equirectangular panorami
 *   **Real-world Scenes**: These panoramas are synthesized from multiple high-definition fisheye images. Due to the vertical Field of View (FOV) constraints of the acquisition hardware, visual data is absent in the **zenith and nadir** (top and bottom) regions.
     *   **Validity Mask (`pano_mask.png`)**: To account for these blind spots, we provide a binary mask where valid pixels are marked, ensuring accurate processing of the visual field.
     *   *Visualization*:
-        | Real-world RGB Panorama | Validity Mask (Green = Valid) |
+        | Real-world RGB Panorama | Validity Mask (RED = Valid) |
         | :---: | :---: |
         | ![Real-world RGB](assets/panoImage_real.jpg) | ![Mask Vis](assets/panoImage_mask_vis.jpg) |
 
@@ -38,7 +38,7 @@ The primary visual modality is a high-resolution, 360° equirectangular panorami
 ### Depth Map (`depth_image.png`)
 Depth information is encoded as a **16-bit single-channel PNG**, spatially aligned with the RGB panorama. Pixel values represent normalized relative depth.
 
-*   **Real-world Data**: Derived from LiDAR sensors, these depth maps exhibit **sparsity**, reflecting the discrete sampling nature of the hardware.
+*   **Real-world Data**: Obtained through LiDAR scanning, these depth maps are inherently **sparse**, a characteristic stemming from the discrete sampling principle of LiDAR technology.
     *   *Visualization*:
         | Real-world Depth (Sparse) |
         | :---: |
