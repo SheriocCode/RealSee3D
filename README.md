@@ -10,7 +10,7 @@ Realsee3D is a large-scale, multi-view RGB-D dataset containing 10,000 indoor sc
 
 ## ✨ Features
 
-*   **Large Scale:** 10,000 unique indoor scenes.
+*   **Large Scale:** 10,000 unique indoor scenes, comprising 95,962 rooms and 299,073 viewpoints/RGB-D pairs.
 *   **Rich Data:** Panoramic RGB-D captures with complete room-level coverage.
 *   **Comprehensive Annotations:** Includes CAD drawings, floor plans, semantic segmentation, 3D detection labels and more (forthcoming).
 *   **Diverse Scenes:** Comprising 1,000 real-world scenes with varied layouts and decoration styles, and 9,000 procedurally generated scenes utilizing over 100 designer-curated style templates, ensuring diverse furniture models and styles for robust training and testing.
