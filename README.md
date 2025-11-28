@@ -3,7 +3,6 @@
 ![Dataset Overview](assets/dataset_overview.png)
 
 [![Website](https://img.shields.io/badge/Website-visit-blue)](https://yourname.github.io/Realsee3D)
-[![Paper](https://img.shields.io/badge/Paper-read-red)](https://yourname.github.io/Realsee3D)
 [![Download](https://img.shields.io/badge/Download-now-green)](https://yourname.github.io/Realsee3D)
 
 Realsee3D is a large-scale, multi-view RGB-D dataset containing 10,000 indoor scenes, comprising real-world residential scenes captured by 3D LiDAR Camera and procedurally generated scenes.
@@ -31,14 +30,18 @@ To access the dataset, you must sign a Data Usage Agreement (PDF format). Please
 
 For a detailed breakdown of dataset statistics, please refer to [metadata/README.md](metadata/README.md).
 
+## 📋 Changelog
+
+*   **2025-11-28:** Dataset introduction and official website release.
+
 ## 📄 Citation
 
 If you use the Realsee3D dataset in your research, please cite our paper:
 
 ```
-@inproceedings{linyuan2026realsee3d,
+@inproceedings{realsee3d,
   title={Realsee3D: A Large-Scale Multi-View RGB-D Dataset of Indoor Scenes},
-  author={Linyuan Li, et al.},
+  author={Linyuan Li, Cihui Pan, Tong Rao, Jie Zhou, Yan Wu, Xi Li, Lingli Wang et al.},
   booktitle={},
   year={2026}
 }
@@ -54,6 +57,3 @@ The Realsee3D dataset is licensed under the [Creative Commons Attribution-NonCom
 
 The accompanying code for data parsing, visualization, and evaluation is released under the [MIT License](https://opensource.org/licenses/MIT), allowing for free use, modification, and distribution.
 
----
-
-For more information, including full dataset introduction, statistics, and abstract, please visit our [project website](https://yourname.github.io/Realsee3D).

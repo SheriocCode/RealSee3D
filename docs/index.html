@@ -1,0 +1,231 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Realsee3D Dataset</title>
+    <link rel="stylesheet" href="assets/css/styles.css">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+</head>
+<body>
+
+    <header>
+        <div class="header-container">
+            <div class="logo"><img src="assets/images/brand-log.png" alt="Realsee3D Logo" class="brand-logo"></div>
+            <nav>
+                <a href="#overview">Overview</a>
+                <a href="#acquisition">Real-World</a>
+                <a href="#synthetic">Synthetic</a>
+                <a href="#download">Download</a>
+                <a href="#changelog">Changelog</a>
+                <a href="#collaboration">Collaboration</a>
+                <a href="https://github.com/realsee-developer/RealSee3D" target="_blank" class="nav-btn">GitHub</a>
+            </nav>
+        </div>
+    </header>
+
+    <div class="hero">
+        <div class="container">
+            <h1>Realsee3D Dataset</h1>
+            <p class="hero-subtitle">A large-scale multi-view RGB-D dataset advancing indoor 3D perception, reconstruction, and scene understanding.</p>
+            <div class="hero-actions">
+                <a href="https://github.com/realsee-developer/RealSee3D" target="_blank" class="btn btn-primary">View on GitHub</a>
+                <a href="#overview" class="btn btn-secondary">Learn More</a>
+            </div>
+            <div class="hero-image-container">
+                <img src="assets/images/dataset_overview.png" alt="Realsee3D Dataset Overview" class="hero-image">
+            </div>
+        </div>
+    </div>
+
+    <div class="container main-content">
+        
+        <section id="overview">
+            <div class="content-block">
+                <div class="section-header">
+                    <h2>Overview</h2>
+                    <span class="badge">10,000 Scenes</span>
+                </div>
+                <p><strong>Realsee3D</strong> is a large-scale multi-view RGB-D dataset designed to advance research in indoor 3D perception, reconstruction, and scene understanding. It contains <strong>10,000 complete indoor scenes</strong>, composed of:</p>
+                <div class="stats-grid">
+                    <div class="stat-item">
+                        <span class="stat-number">1,000</span>
+                        <span class="stat-label">Real-World Scenes</span>
+                        <span class="stat-desc">Captured by Galois-P4 LiDAR</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">9,000</span>
+                        <span class="stat-label">Synthetic Scenes</span>
+                        <span class="stat-desc">Procedurally generated from real floorplans</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">95,962</span>
+                        <span class="stat-label">Total Rooms</span>
+                        <span class="stat-desc">Real-world (9,483) + Synthetic (86,479)</span>
+                    </div>
+                    <div class="stat-item">
+                        <span class="stat-number">299,073</span>
+                        <span class="stat-label">Total Viewpoints</span>
+                        <span class="stat-desc">Real-world (24,263) + Synthetic (274,810)</span>
+                    </div>
+                </div>
+                <p class="highlight-purpose">Realsee3D aims to serve as a unified benchmark for high-fidelity indoor scene modeling, facilitating research in geometry reconstruction, multimodal learning, and embodied AI.</p>
+                <p>Beyond RGB-D imagery, the dataset provides comprehensive annotations, including CAD drawings, floorplans, semantic segmentation labels, and 3D object detection information.</p>
+            </div>
+        </section>
+
+        <section id="acquisition">
+            <div class="content-block">
+                <h2>Real-World Data Acquisition</h2>
+                <p>Our real-world data is collected from indoor residential scenes using the <strong>Realsee Galois 3D LiDAR scanning system</strong>. The system captures high-fidelity synchronized data:</p>
+                
+                <div class="feature-grid">
+                    <div class="feature-text">
+                        <h3>High-Fidelity RGB-D</h3>
+                        <p>Unlike traditional panoramic pipelines, our system employs nearly perfectly co-centered cameras and LiDAR. We achieve <strong>HDR quality</strong> via multi-exposure stacking and ensure precise alignment between depth and color data.</p>
+                    </div>
+                    <div class="feature-text">
+                        <h3> Precise Localization</h3>
+                        <p>We use a global registration process that combines visual features and 3D point cloud data to ensure accurate camera poses across the entire scene.</p>
+                    </div>
+                </div>
+
+                <div class="tech-details-container">
+                    <details class="tech-details">
+                        <summary>Deep Dive: High-Fidelity Data Processing</summary>
+                        <div class="details-content">
+                            <h4>High Dynamic Range (HDR) RGB Panorama</h4>
+                            <p>Unlike traditional panoramic pipelines that rely on approximated co-centering (e.g., Insta) or wide-baseline fusion (e.g., Matterport), our system employs nearly perfectly co-centered cameras. This structural advantage significantly simplifies the stitching process and ensures superior physical consistency in the resulting panoramas.</p>
+                            <p>Furthermore, our advanced ISP pipeline guarantees photometric fidelity: stitching is performed directly in the RAW domain for highly consistent color and luminance, and we achieve High Dynamic Range (HDR) quality via multiple-exposure stacking. A sophisticated HDR tone-mapping algorithm preserves this extended range, while the system explicitly handles mixed-illumination conditions, supplying richer, more reliable visual information than most commercial 360° cameras.</p>
+                            
+                            <h4>LiDAR Depth Data Synthesis</h4>
+                            <p>The continuously acquired 3D point cloud data from the LiDAR is post-processed, integrated, and synthesized into a depth image. This depth image is precisely aligned with the panoramic color image via calibrated camera-LiDAR extrinsics. The near-coincidence of the projection centers for the color and depth images is critical for providing geometrically reliable, dense RGB-D data.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="tech-details">
+                        <summary>Deep Dive: Global Registration</summary>
+                        <div class="details-content">
+                            <p>The initial pose estimation for each scan position is completed during the data acquisition phase. Whenever a new location is scanned, the system begins a search for potential pairs among all previously completed scan positions and compute feature matches. By combining the calculated feature matches with the corresponding 3D point cloud data, the relative pose is determined. Once the correct pose is confirmed, the new scan position is registered into the existing map.</p>
+                            <p>Since fully automatic registering occasionally results in errors, manual correction is sometimes applied. The initial poses then undergo a global post-processing step for further refinement. This global post-processing considers the co-visibility relationships between all scan positions, using this framework to perform a global optimization incorporating both visual and 3D features. This process ultimately generates the final, corrected pose file.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="image-gallery">
+                    <figure>
+                        <img src="assets/images/real_rgb.jpg" alt="Real World RGB">
+                        <figcaption>HDR RGB Panorama</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/real_depth.jpg" alt="Real World Depth">
+                        <figcaption>LiDAR Depth</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/real_seg.png" alt="Real World Segmentation">
+                        <figcaption>Semantic Segmentation</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="synthetic">
+            <div class="content-block">
+                <h2>Synthetic Scene Generation</h2>
+                <p>To achieve the scale required for modern deep learning, we procedurally generated 9,000 scenes based on real-world floorplan distributions. Our pipeline ensures geometric plausibility and photorealism.</p>
+
+                <div class="synthetic-grid">
+                    <!-- Left Column: Layout -->
+                    <div class="synthetic-col">
+                        <h3>Intelligent Layout Algorithms</h3>
+                        <p>Unlike common random generation, our approach is grounded in real-world floorplan distributions. We employ a hybrid optimization system integrating placement priors and expert design knowledge.</p>
+                    </div>
+
+                    <!-- Right Column: Rendering & Assets -->
+                    <div class="synthetic-col">
+                        <h3>High-Fidelity Rendering & Assets</h3>
+                        <p>We leverage a massive library of over 100,000 high-precision PBR models and a modified Unreal Engine 4 pipeline with hardware-accelerated Ray Tracing.</p>
+                    </div>
+                </div>
+
+                <div class="tech-details-container">
+                    <details class="tech-details">
+                        <summary>Deep Dive: Layout Logic</summary>
+                        <div class="details-content">
+                            <p>We developed a hybrid rule-based and learning-based discrete space optimization system. This system integrates two critical components: placement priors derived from Realsee's vast real scene data, and expert knowledge provided by professional interior designers (e.g., circulation flow and storage requirements).</p>
+                            <p>This integration ensures that all generated layouts are structurally valid and functionally plausible. Furthermore, we guarantee aesthetic diversity by employing over 200 distinct style templates and a style matching algorithm, supporting a wide range of specialized room types such as children’s rooms, gyms, and tea rooms.</p>
+                        </div>
+                    </details>
+                    
+                    <details class="tech-details">
+                        <summary>Deep Dive: Rendering Pipeline</summary>
+                        <div class="details-content">
+                            <h4>3D Asset Library</h4>
+                            <p>Our "Weilaijia" library contains >100,000 models across 200+ categories. Unlike low-poly approximations, our models preserve fine geometric details and use PBR materials for realistic surface properties (specular highlights, subsurface scattering).</p>
+                            
+                            <h4>Ray-Tracing Engine</h4>
+                            <p>Built on a modified UE4, our pipeline utilizes Ray Tracing for accurate Global Illumination (GI), Reflections, and Ambient Occlusion. We integrate DLSS and five distinct illumination schemas (e.g., Warm Day, Cold Night) to maximize domain variability.</p>
+                        </div>
+                    </details>
+                </div>
+
+                <div class="image-gallery four-cols">
+                    <figure>
+                        <img src="assets/images/synth_rgb.jpg" alt="Synthetic RGB">
+                        <figcaption>Rendered RGB</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/synth_depth.jpg" alt="Synthetic Depth">
+                        <figcaption>Depth Map</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/synth_normal.png" alt="Synthetic Normal">
+                        <figcaption>Surface Normals</figcaption>
+                    </figure>
+                    <figure>
+                        <img src="assets/images/synth_seg.png" alt="Synthetic Segmentation">
+                        <figcaption>Segmentation</figcaption>
+                    </figure>
+                </div>
+            </div>
+        </section>
+
+        <section id="download">
+            <div class="content-block">
+                <h2>Download Dataset</h2>
+                <p>To access the dataset, you must sign a Data Usage Agreement (PDF format). Please send your request, specifying your intended use, to <strong>developer@realsee.com</strong>. Once your application is approved, we will reply with the Data Usage Agreement PDF, download instructions, and links.</p>
+            </div>
+        </section>
+
+        <section id="changelog">
+            <div class="content-block">
+                <h2>Changelog</h2>
+                <ul>
+                    <li><strong>2025-11-28:</strong> Dataset introduction and official website release.</li>
+                </ul>
+            </div>
+        </section>
+
+        <section id="collaboration">
+            <div class="content-block text-center">
+                <h2>Collaborate With Us</h2>
+                <p>We welcome academic and industry professionals interested in the Realsee3D dataset to contact us for further cooperation.</p>
+                <p>Please reach out to us at: <a href="mailto:pancihui001@realsee.com" class="email-text"><strong>pancihui001@realsee.com</strong></a></p>
+            </div>
+        </section>
+
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <p>&copy; 2025 Realsee3D Team. All rights reserved.</p>
+            <div class="footer-links">
+                <a href="https://github.com/realsee-developer/RealSee3D">GitHub</a>
+            </div>
+        </div>
+    </footer>
+
+</body>
+</html>
