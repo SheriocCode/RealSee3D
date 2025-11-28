@@ -15,12 +15,17 @@ Realsee3D is a large-scale, multi-view RGB-D dataset containing 10,000 indoor sc
 *   **Comprehensive Annotations:** Includes CAD drawings, floor plans, semantic segmentation, 3D detection labels and more (forthcoming).
 *   **Diverse Scenes:** Comprising 1,000 real-world scenes with varied layouts and decoration styles, and 9,000 procedurally generated scenes utilizing over 100 designer-curated style templates, ensuring diverse furniture models and styles for robust training and testing.
 
-## 🗃️ Data Organization
+## 🗃️ Data Organization & Access
 
-The Realsee3D dataset is organized into individual scenes, each containing detailed multi-view RGB-D data. To access and understand the data, please refer to the following resources:
+The Realsee3D dataset is organized into individual scenes, each containing detailed multi-view RGB-D data.
 
-*   **Detailed Dataset Structure:** [DATASET_STRUCTURE.md](DATASET_STRUCTURE.md) provides a comprehensive explanation of the file organization and data formats within each scene.
-*   **Download and Usage Instructions:** For information on how to download the dataset and begin using it, please visit our [official website](https://yourname.github.io/Realsee3D).
+*   **Data Structure & Usage:** [DATASET_STRUCTURE.md](DATASET_STRUCTURE.md) provides a comprehensive explanation of the file organization, data formats, and detailed usage instructions.
+*   **Methodology:** Visit our [official website](https://yourname.github.io/Realsee3D) for more detailed information on how real-world data is collected and how synthetic data is generated.
+
+### 📥 How to Download
+
+To access the dataset, you must sign a Data Usage Agreement (PDF format). Please send your request, specifying your intended use, to **developer@realsee.com**. Once your application is approved, we will reply with the Data Usage Agreement PDF, download instructions, and links.
+
 
 ## 📊 Statistics
 
@@ -41,7 +46,13 @@ If you use the Realsee3D dataset in your research, please cite our paper:
 
 ## 📝 License
 
+### Dataset License
+
 The Realsee3D dataset is licensed under the [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+
+### Code License
+
+The accompanying code for data parsing, visualization, and evaluation is released under the [MIT License](https://opensource.org/licenses/MIT), allowing for free use, modification, and distribution.
 
 ---
 
