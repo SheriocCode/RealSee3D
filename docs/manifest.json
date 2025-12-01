@@ -1,0 +1,27 @@
+{
+    "name": "Realsee3D Dataset",
+    "short_name": "Realsee3D",
+    "description": "A large-scale multi-view RGB-D dataset for indoor 3D perception, reconstruction, and scene understanding research.",
+    "start_url": "/",
+    "display": "standalone",
+    "background_color": "#0f172a",
+    "theme_color": "#1a1a2e",
+    "orientation": "portrait-primary",
+    "scope": "/",
+    "lang": "en",
+    "categories": ["education", "science", "research"],
+    "icons": [
+        {
+            "src": "favicon.ico",
+            "sizes": "64x64 32x32 24x24 16x16",
+            "type": "image/x-icon"
+        },
+        {
+            "src": "assets/images/brand-log.png",
+            "sizes": "192x192",
+            "type": "image/png",
+            "purpose": "any maskable"
+        }
+    ]
+}
+

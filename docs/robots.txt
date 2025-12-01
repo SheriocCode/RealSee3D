@@ -1,0 +1,12 @@
+# Robots.txt for Realsee3D Dataset
+# https://dataset.realsee.ai/
+
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://dataset.realsee.ai/sitemap.xml
+
+# Crawl-delay (optional, be polite to crawlers)
+Crawl-delay: 1
+
