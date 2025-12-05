@@ -1,0 +1,43 @@
+cff-version: 1.2.0
+message: "If you use this dataset, please cite it as below."
+authors:
+  - family-names: "Li"
+    given-names: "Linyuan"
+  - family-names: "Pan"
+    given-names: "Cihui"
+  - family-names: "Rao"
+    given-names: "Tong"
+  - family-names: "Zhou"
+    given-names: "Jie"
+  - family-names: "Wu"
+    given-names: "Yan"
+  - family-names: "Li"
+    given-names: "Xi"
+  - family-names: "Wang"
+    given-names: "Lingli"
+title: "Realsee3D: A Large-Scale Multi-View RGB-D Dataset of Indoor Scenes"
+version: 1.0.0
+doi: 10.5281/zenodo.17826243
+date-released: 2025-12-05
+url: "https://dataset.realsee.ai/"
+preferred-citation:
+  type: data
+  authors:
+    - family-names: "Li"
+      given-names: "Linyuan"
+    - family-names: "Pan"
+      given-names: "Cihui"
+    - family-names: "Rao"
+      given-names: "Tong"
+    - family-names: "Zhou"
+      given-names: "Jie"
+    - family-names: "Wu"
+      given-names: "Yan"
+    - family-names: "Li"
+      given-names: "Xi"
+    - family-names: "Wang"
+      given-names: "Lingli"
+  doi: "10.5281/zenodo.17826243"
+  publisher: "Zenodo"
+  title: "Realsee3D: A Large-Scale Multi-View RGB-D Dataset of Indoor Scenes (Version 1.0)"
+  year: 2025
