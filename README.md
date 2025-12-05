@@ -2,8 +2,8 @@
 
 ![Dataset Overview](assets/dataset_overview.png)
 
-[![Website](https://img.shields.io/badge/Website-visit-blue)](https://realsee-developer.github.io/RealSee3D/)
-[![Download](https://img.shields.io/badge/Download-now-green)](https://realsee-developer.github.io/RealSee3D/#download)
+[![Website](https://img.shields.io/badge/Website-visit-blue)](https://dataset.realsee.ai/)
+[![Download](https://img.shields.io/badge/Download-now-green)](https://https://dataset.realsee.ai/#download)
 
 Realsee3D is a large-scale, multi-view RGB-D dataset containing 10,000 indoor scenes, comprising real-world residential scenes captured by 3D LiDAR Camera and procedurally generated scenes.
 
@@ -19,7 +19,7 @@ Realsee3D is a large-scale, multi-view RGB-D dataset containing 10,000 indoor sc
 The Realsee3D dataset is organized into individual scenes, each containing detailed multi-view RGB-D data.
 
 *   **Data Structure & Usage:** [DATASET_STRUCTURE.md](DATASET_STRUCTURE.md) provides a comprehensive explanation of the file organization, data formats, and detailed usage instructions.
-*   **Methodology:** Visit our [official website](https://realsee-developer.github.io/RealSee3D) for more detailed information on how real-world data is collected and how synthetic data is generated.
+*   **Methodology:** Visit our [official website](https://dataset.realsee.ai/) for more detailed information on how real-world data is collected and how synthetic data is generated.
 
 ### 📥 How to Download
 
