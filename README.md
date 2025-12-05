@@ -33,6 +33,7 @@ For a detailed breakdown of dataset statistics, please refer to [metadata/README
 
 ## 📋 Changelog
 
+*   **2025-12-05:** Phase I data(RGB-D pano and extrinsics) released.
 *   **2025-11-28:** Dataset introduction and official website release.
 
 ## 📄 Citation
